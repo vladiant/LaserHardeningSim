@@ -94,3 +94,34 @@ To turn this from a qualitative demonstrator into something that reproduces the 
 - Constant thermal properties (no temperature dependence of k/rho/cp, no latent heat of melting/solidification modeled beyond flagging melted nodes).
 - JMAK/Koistinen-Marburger with additivity-rule handling of a varying temperature history is a standard engineering approximation, not a CALPHAD-grade transformation model; retained austenite and tempering effects during multi-pass overlap are not modeled.
 - Explicit FTCS timestepping is simple and easy to reason about, but restricts the timestep via the CFL-like stability bound the code computes automatically; an implicit scheme would allow larger steps at the cost of more code.
+
+## References
+1. A. N. Kolmogorov, "On the statistical theory of the crystallization of metals," *Izvestiya Akademii Nauk SSSR, Seriya Matematicheskaya*, 1(3), 355-359 (1937).
+    Basis for the Kolmogorov part of JMAK transformation kinetics.
+
+2. W. A. Johnson and R. F. Mehl, "Reaction kinetics in processes of nucleation and growth," *Transactions of the American Institute of Mining and Metallurgical Engineers*, 135, 416-442 (1939).
+    Classical source for nucleation-and-growth transformation kinetics.
+
+3. M. Avrami, "Kinetics of phase change. I-III," *The Journal of Chemical Physics*, 7, 1103-1112 (1939); 8, 212-224 (1940); 9, 177-184 (1941).
+    Classical source for the Avrami form used in the JMAK relation.
+
+4. D. P. Koistinen and R. E. Marburger, "A general equation prescribing the extent of the austenite-martensite transformation in pure iron-carbon alloys and plain carbon steels," *Acta Metallurgica*, 7(1), 59-60 (1959).
+    Source of the Koistinen-Marburger martensite relation used after cooling through Ms.
+
+5. H. K. D. H. Bhadeshia and R. W. K. Honeycombe, *Steels: Microstructure and Properties*, 4th ed., Butterworth-Heinemann, 2017.
+    Good reference for ferrite, pearlite, austenite, martensite, Ac1/Ac3, Ms, and hardness-vs-microstructure terminology.
+
+6. Jon L. Dossett and George E. Totten, editors, *ASM Handbook, Volume 4A: Steel Heat Treating Fundamentals and Processes*, ASM International, 2013.
+    Practical reference for austenitization, martensitic hardening, case depth, and heat-treatment terminology in steels.
+
+7. J. R. Davis, editor, *Surface Hardening of Steels: Understanding the Basics*, ASM International, 2002.
+    Useful reference for surface hardening, transformation hardening, and hardness-profile terminology.
+
+8. H. S. Carslaw and J. C. Jaeger, *Conduction of Heat in Solids*, 2nd ed., Oxford University Press, 1959.
+    Standard reference for transient heat conduction and boundary-condition terminology.
+
+9. S. V. Patankar, *Numerical Heat Transfer and Fluid Flow*, Hemisphere, 1980.
+    Standard engineering reference for finite-volume / finite-difference discretization ideas and conservative boundary handling.
+
+10. W. M. Steen and J. Mazumder, *Laser Material Processing*, 4th ed., Springer, 2010.
+     Standard reference for Gaussian laser beams, absorptivity, scan speed, pulse overlap, and laser-processing terminology.
